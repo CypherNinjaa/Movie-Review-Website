@@ -40,10 +40,11 @@ if (process.env.MONGO_URI) {
     console.log('No MongoDB URI provided, running without database');
 }
 
-// Routes (will be added later)
-// app.use('/api/auth', require('./routes/auth'));
-// app.use('/api/movies', require('./routes/movies'));
-// app.use('/api/admin', require('./routes/admin'));
+// API Routes
+app.use('/api/auth', require('./routes/auth'));
+app.use('/api/movies', require('./routes/movies'));
+app.use('/api/reviews', require('./routes/reviews'));
+app.use('/api/admin', require('./routes/admin'));
 
 // Error handling
 app.use((err, req, res, next) => {
