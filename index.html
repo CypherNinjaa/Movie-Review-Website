@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineRate - Movie Reviews & Ratings</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <i class="fas fa-film"></i>
+                    <span>CineRate</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#movies" class="nav-link">Movies</a></li>
+                    <li><a href="#reviews" class="nav-link">Reviews</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Discover Your Next Favorite Movie</h1>
+            <p>Rate, review, and explore thousands of movies with our community of film enthusiasts</p>
+            <div class="search-container">
+                <input type="text" id="movieSearch" placeholder="Search for movies...">
+                <button id="searchBtn"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+        <div class="hero-background"></div>
+    </section>
+
+    <!-- Featured Movies Section -->
+    <section id="movies" class="featured-movies">
+        <div class="container">
+            <h2>Featured Movies</h2>
+            <div class="movie-grid" id="movieGrid">
+                <!-- Movies will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Top Rated Section -->
+    <section class="top-rated">
+        <div class="container">
+            <h2>Top Rated Movies</h2>
+            <div class="top-rated-grid" id="topRatedGrid">
+                <!-- Top rated movies will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="reviews-section">
+        <div class="container">
+            <h2>Latest Reviews</h2>
+            <div class="reviews-grid" id="reviewsGrid">
+                <!-- Reviews will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Add Review Modal -->
+    <div id="reviewModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Write a Review</h2>
+            <form id="reviewForm">
+                <div class="form-group">
+                    <label for="movieTitle">Movie Title</label>
+                    <input type="text" id="movieTitle" required>
+                </div>
+                <div class="form-group">
+                    <label for="reviewerName">Your Name</label>
+                    <input type="text" id="reviewerName" required>
+                </div>
+                <div class="form-group">
+                    <label for="rating">Rating</label>
+                    <div class="star-rating" id="starRating">
+                        <i class="fas fa-star" data-rating="1"></i>
+                        <i class="fas fa-star" data-rating="2"></i>
+                        <i class="fas fa-star" data-rating="3"></i>
+                        <i class="fas fa-star" data-rating="4"></i>
+                        <i class="fas fa-star" data-rating="5"></i>
+                    </div>
+                    <input type="hidden" id="ratingValue" value="0">
+                </div>
+                <div class="form-group">
+                    <label for="reviewText">Review</label>
+                    <textarea id="reviewText" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Submit Review</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Movie Details Modal -->
+    <div id="movieModal" class="modal">
+        <div class="modal-content movie-details">
+            <span class="close">&times;</span>
+            <div id="movieDetailsContent">
+                <!-- Movie details will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2>About CineRate</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>CineRate is your ultimate destination for movie reviews and ratings. Our community of passionate
+                        film enthusiasts shares honest opinions and detailed reviews to help you discover your next
+                        favorite movie.</p>
+                    <div class="features">
+                        <div class="feature">
+                            <i class="fas fa-star"></i>
+                            <h3>Honest Ratings</h3>
+                            <p>Genuine reviews from real movie lovers</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-users"></i>
+                            <h3>Community Driven</h3>
+                            <p>Built by and for movie enthusiasts</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-search"></i>
+                            <h3>Easy Discovery</h3>
+                            <p>Find movies that match your taste</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>contact@cinerate.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+1 (555) 123-4567</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>123 Movie Street, Hollywood, CA 90210</span>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <textarea placeholder="Your Message" rows="5" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <i class="fas fa-film"></i>
+                        <span>CineRate</span>
+                    </div>
+                    <p>Your trusted source for movie reviews and ratings</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#movies">Movies</a></li>
+                        <li><a href="#reviews">Reviews</a></li>
+                        <li><a href="#about">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CineRate. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Action Button -->
+    <button id="addReviewBtn" class="fab">
+        <i class="fas fa-plus"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
